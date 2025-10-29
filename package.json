@@ -1,0 +1,39 @@
+{
+  "name": "test-better-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "volta": {
+    "node": "22.21.0",
+    "pnpm": "10.19.0"
+  },
+  "dependencies": {
+    "@better-auth/scim": "file:../better-auth/packages/scim/better-auth-scim-1.4.0-beta.13.tgz",
+    "@better-auth/sso": "file:../better-auth/packages/sso/better-auth-sso-1.4.0-beta.13.tgz",
+    "@types/better-sqlite3": "^7.6.13",
+    "better-auth": "file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz",
+    "better-sqlite3": "^12.4.1",
+    "next": "16.0.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
