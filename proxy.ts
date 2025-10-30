@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export default async function proxy(request: NextRequest) {
-    console.log(`${request.method} ${request.url}`, request.nextUrl.pathname, await request.text());
+    console.log(`${request.method} ${request.url} ${request.headers.get('content-type')}`, await request.text(),);
     return NextResponse.next();
 }
 
