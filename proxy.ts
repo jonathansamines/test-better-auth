@@ -7,7 +7,7 @@ export default async function proxy(request: NextRequest) {
         forwardedHeaders.set('content-type', 'application/json');
     }
 
-    console.log(`${request.method} ${request.url} ${request.headers.get('content-type')}`, await request.clone().json());
+    console.log(`${request.method} ${request.url} ${forwardedHeaders.get('content-type')}`, await request.clone().text());
 
     return NextResponse.next({
         request: { headers: forwardedHeaders }
