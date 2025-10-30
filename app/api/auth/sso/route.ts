@@ -1,17 +1,19 @@
 import { auth } from "@/lib/auth";
 
+const BASE_URL = process.env.BASE_URL ?? "http://localhost:3000";
+const IDP_ENTRYPOINT = process.env.SSO_IDP_ENTRYPOINT ?? "https://dummyidp.com/apps/app_01k16v4vb5yytywqjjvv2b3435";
+
 export async function GET(request: Request) {
 	try {
 		await auth.api.registerSSOProvider({
 			body: {
 				organizationId: 'H6Jpl1dFBY7o8Sz7lT6z7b1ZYYtphRMF',
-				domain: "http://localhost:3000",
+				domain: BASE_URL,
 				providerId: "sso",
-				issuer: "http://localhost:3000/api/auth/sso/saml2/sp/metadata",
+				issuer: `${BASE_URL}/api/auth/sso/saml2/sp/metadata`,
 				samlConfig: {
-					entryPoint:
-						"https://dummyidp.com/apps/app_01k16v4vb5yytywqjjvv2b3435",
-					cert: `-----BEGIN CERTIFICATE-----
+					entryPoint: IDP_ENTRYPOINT,
+					cert: process.env.SSO_IDP_CERT ?? `-----BEGIN CERTIFICATE-----
 	  MIIDBzCCAe+gAwIBAgIUCLBK4f75EXEe4gyroYnVaqLoSp4wDQYJKoZIhvcNAQEL
 	  BQAwEzERMA8GA1UEAwwIZHVtbXlpZHAwHhcNMjQwNTEzMjE1NDE2WhcNMzQwNTEx
 	  MjE1NDE2WjATMREwDwYDVQQDDAhkdW1teWlkcDCCASIwDQYJKoZIhvcNAQEBBQAD
@@ -31,7 +33,7 @@ export async function GET(request: Request) {
 	  jzGhYL6m9gFTm/8=
 	  -----END CERTIFICATE-----`,
 					spMetadata: {
-						metadata: `
+						metadata: process.env.SSO_SP_METADATA ?? `
 				  <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://localhost:3000/api/auth/sso/saml2/sp/metadata">
 		  <md:SPSSODescriptor AuthnRequestsSigned="false" WantAssertionsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
 			  <md:KeyDescriptor use="signing">
@@ -72,18 +74,16 @@ export async function GET(request: Request) {
 					idpMetadata: {
 						// entityURL:
 						// 	"https://dummyidp.com/apps/app_01k16v4vb5yytywqjjvv2b3435/metadata",
-						entityID:
-							"https://dummyidp.com/apps/app_01k16v4vb5yytywqjjvv2b3435",
+						entityID: IDP_ENTRYPOINT,
 						// redirectURL:
 						// 	"https://dummyidp.com/apps/app_01k16v4vb5yytywqjjvv2b3435/sso",
 						singleSignOnService: [
 							{
 								Binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
-								Location:
-									"https://dummyidp.com/apps/app_01k16v4vb5yytywqjjvv2b3435/sso",
+								Location: `${IDP_ENTRYPOINT}/sso`,
 							},
 						],
-						cert: `-----BEGIN CERTIFICATE-----
+						cert: process.env.SSO_IDP_CERT ?? `-----BEGIN CERTIFICATE-----
 		MIIDBzCCAe+gAwIBAgIUCLBK4f75EXEe4gyroYnVaqLoSp4wDQYJKoZIhvcNAQEL
 		BQAwEzERMA8GA1UEAwwIZHVtbXlpZHAwHhcNMjQwNTEzMjE1NDE2WhcNMzQwNTEx
 		MjE1NDE2WjATMREwDwYDVQQDDAhkdW1teWlkcDCCASIwDQYJKoZIhvcNAQEBBQAD
