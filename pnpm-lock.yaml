@@ -9,17 +9,17 @@ importers:
   .:
     dependencies:
       '@better-auth/scim':
-        specifier: file:../better-auth/packages/scim/better-auth-scim-1.4.0-beta.13.tgz
-        version: file:../better-auth/packages/scim/better-auth-scim-1.4.0-beta.13.tgz(better-auth@file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        specifier: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@5685
+        version: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@5685(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       '@better-auth/sso':
-        specifier: file:../better-auth/packages/sso/better-auth-sso-1.4.0-beta.13.tgz
-        version: file:../better-auth/packages/sso/better-auth-sso-1.4.0-beta.13.tgz(better-auth@file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        specifier: https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@5685
+        version: https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@5685(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       '@types/better-sqlite3':
         specifier: ^7.6.13
         version: 7.6.13
       better-auth:
-        specifier: file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz
-        version: file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: https://pkg.pr.new/better-auth/better-auth@5685
+        version: https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       better-sqlite3:
         specifier: ^12.4.1
         version: 12.4.1
@@ -135,8 +135,9 @@ packages:
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
-  '@better-auth/core@1.4.0-beta.13':
-    resolution: {integrity: sha512-EGySsNv6HQYnlRQDIa7otIMrwFoC0gGLxBum9lC6C3wAsF4l4pn/ECcdIriFpc9ewLb8mGkeMSpvjVBUBND6ew==}
+  '@better-auth/core@https://pkg.pr.new/better-auth/better-auth/@better-auth/core@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb':
+    resolution: {tarball: https://pkg.pr.new/better-auth/better-auth/@better-auth/core@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb}
+    version: 1.4.0-beta.15
     peerDependencies:
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
@@ -145,22 +146,23 @@ packages:
       kysely: ^0.28.5
       nanostores: ^1.0.1
 
-  '@better-auth/scim@file:../better-auth/packages/scim/better-auth-scim-1.4.0-beta.13.tgz':
-    resolution: {integrity: sha512-IfEtYrBVVXTJEXGCoyLc8qr+BXvd/4eYbx583ACwhtv5PBN3rdcw2HndUGaOAnxVGE6JYS2BUXnw4nowNlYlXA==, tarball: file:../better-auth/packages/scim/better-auth-scim-1.4.0-beta.13.tgz}
+  '@better-auth/scim@https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@5685':
+    resolution: {tarball: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@5685}
     version: 1.4.0-beta.13
     peerDependencies:
-      better-auth: 1.4.0-beta.13
+      better-auth: 1.4.0-beta.15
 
-  '@better-auth/sso@file:../better-auth/packages/sso/better-auth-sso-1.4.0-beta.13.tgz':
-    resolution: {integrity: sha512-r/yY86Kb9UYAeDIRhlleW86YXj9osFMw/6NYYo3gs+eo9hVZ/GqQK2MQiOgeU7Bcr33TFVbFmjPDq8V0dskR/g==, tarball: file:../better-auth/packages/sso/better-auth-sso-1.4.0-beta.13.tgz}
-    version: 1.4.0-beta.13
+  '@better-auth/sso@https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@5685':
+    resolution: {tarball: https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@5685}
+    version: 1.4.0-beta.15
     peerDependencies:
-      better-auth: 1.4.0-beta.13
+      better-auth: 1.4.0-beta.15
 
-  '@better-auth/telemetry@1.4.0-beta.13':
-    resolution: {integrity: sha512-910f+APALhhD79TiujzXp85Pnd2M3TlcTgBfiYF+mk3ouIkBJkl2N6D2ElcgwfiNTg50cFuTkP3AFPYioz8Arw==}
+  '@better-auth/telemetry@https://pkg.pr.new/better-auth/better-auth/@better-auth/telemetry@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb':
+    resolution: {tarball: https://pkg.pr.new/better-auth/better-auth/@better-auth/telemetry@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb}
+    version: 1.4.0-beta.15
     peerDependencies:
-      '@better-auth/core': 1.4.0-beta.13
+      '@better-auth/core': 1.4.0-beta.15
 
   '@better-auth/utils@0.3.0':
     resolution: {integrity: sha512-W+Adw6ZA6mgvnSnhOki270rwJ42t4XzSK6YWGF//BbVXL6SwCLWfyzBc1lN2m/4RM28KubdBKQ4X5VMoLRNPQw==}
@@ -505,6 +507,9 @@ packages:
   '@simplewebauthn/server@13.2.2':
     resolution: {integrity: sha512-HcWLW28yTMGXpwE9VLx9J+N2KEUaELadLrkPEEI9tpI5la70xNEVEsu/C+m3u7uoq4FulLqZQhgBCzR9IZhFpA==}
     engines: {node: '>=20.0.0'}
+
+  '@standard-schema/spec@1.0.0':
+    resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
@@ -888,9 +893,9 @@ packages:
     resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
     engines: {node: '>= 0.8'}
 
-  better-auth@file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz:
-    resolution: {integrity: sha512-5h/6NMyCG8G93aUz1r6Y6uxy8QSv4Qx7UWdkbm6wWC1n0K3TmAr8WD3KuSz2O2++GseErtfnqSn7gJm+ClSj3w==, tarball: file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz}
-    version: 1.4.0-beta.13
+  better-auth@https://pkg.pr.new/better-auth/better-auth@5685:
+    resolution: {tarball: https://pkg.pr.new/better-auth/better-auth@5685}
+    version: 1.4.0-beta.15
     peerDependencies:
       '@lynx-js/react': '*'
       '@sveltejs/kit': '*'
@@ -2584,25 +2589,26 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@better-auth/core@1.4.0-beta.13(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)':
+  '@better-auth/core@https://pkg.pr.new/better-auth/better-auth/@better-auth/core@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)':
     dependencies:
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
+      '@standard-schema/spec': 1.0.0
       better-call: 1.0.24
       jose: 6.1.0
       kysely: 0.28.8
       nanostores: 1.0.1
       zod: 4.1.12
 
-  '@better-auth/scim@file:../better-auth/packages/scim/better-auth-scim-1.4.0-beta.13.tgz(better-auth@file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
+  '@better-auth/scim@https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@5685(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
-      better-auth: file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      better-auth: https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       zod: 4.1.12
 
-  '@better-auth/sso@file:../better-auth/packages/sso/better-auth-sso-1.4.0-beta.13.tgz(better-auth@file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
+  '@better-auth/sso@https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@5685(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
       '@better-fetch/fetch': 1.1.18
-      better-auth: file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      better-auth: https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       fast-xml-parser: 5.3.0
       jose: 6.1.0
       oauth2-mock-server: 7.2.1
@@ -2611,9 +2617,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@better-auth/telemetry@1.4.0-beta.13(@better-auth/core@1.4.0-beta.13(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1))':
+  '@better-auth/telemetry@https://pkg.pr.new/better-auth/better-auth/@better-auth/telemetry@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb(@better-auth/core@https://pkg.pr.new/better-auth/better-auth/@better-auth/core@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1))':
     dependencies:
-      '@better-auth/core': 1.4.0-beta.13(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
+      '@better-auth/core': https://pkg.pr.new/better-auth/better-auth/@better-auth/core@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
 
@@ -2971,6 +2977,8 @@ snapshots:
       '@peculiar/asn1-schema': 2.5.0
       '@peculiar/asn1-x509': 2.5.0
       '@peculiar/x509': 1.14.0
+
+  '@standard-schema/spec@1.0.0': {}
 
   '@swc/helpers@0.5.15':
     dependencies:
@@ -3355,10 +3363,10 @@ snapshots:
     dependencies:
       safe-buffer: 5.1.2
 
-  better-auth@file:../better-auth/packages/better-auth/better-auth-1.4.0-beta.13.tgz(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+  better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
     dependencies:
-      '@better-auth/core': 1.4.0-beta.13(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
-      '@better-auth/telemetry': 1.4.0-beta.13(@better-auth/core@1.4.0-beta.13(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1))
+      '@better-auth/core': https://pkg.pr.new/better-auth/better-auth/@better-auth/core@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1)
+      '@better-auth/telemetry': https://pkg.pr.new/better-auth/better-auth/@better-auth/telemetry@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb(@better-auth/core@https://pkg.pr.new/better-auth/better-auth/@better-auth/core@5d01b135b1fb2af101e6a6aa6cf43b843daf73eb(@better-auth/utils@0.3.0)(@better-fetch/fetch@1.1.18)(better-call@1.0.24)(jose@6.1.0)(kysely@0.28.8)(nanostores@1.0.1))
       '@better-auth/utils': 0.3.0
       '@better-fetch/fetch': 1.1.18
       '@noble/ciphers': 2.0.1
