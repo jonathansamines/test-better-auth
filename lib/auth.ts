@@ -7,7 +7,7 @@ import { LibsqlDialect } from "@libsql/kysely-libsql";
 
 export const auth = betterAuth({
 	database: process.env.NODE_ENV === "production" ? new LibsqlDialect({
-        url: process.env.TURSO_DATABASE_URL ?? "",
+        url: process.env.TURSO_DATABASE_URL ?? "libsql://localhost:8080?tls=0",
         authToken: process.env.TURSO_AUTH_TOKEN ?? "",
     }) : new Database("./sqlite.db"),
 
