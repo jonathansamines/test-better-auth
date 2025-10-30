@@ -5,7 +5,7 @@ const IDP_ENTRYPOINT = process.env.SSO_IDP_ENTRYPOINT ?? "https://dummyidp.com/a
 
 export async function GET(request: Request) {
 	try {
-		await auth.api.registerSSOProvider({
+		const result = await auth.api.registerSSOProvider({
 			body: {
 				organizationId: 'H6Jpl1dFBY7o8Sz7lT6z7b1ZYYtphRMF',
 				domain: BASE_URL,
@@ -108,6 +108,7 @@ export async function GET(request: Request) {
 			},
 			headers: request.headers,
 		});
+		console.log('sso info: ', result)
 	} catch (error) {
 		console.log(error);
 		return Response.json({ error: (error as Error).message });

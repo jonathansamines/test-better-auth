@@ -3,9 +3,14 @@ import { openAPI, organization } from "better-auth/plugins"
 import { sso } from "@better-auth/sso";
 import { scim } from "@better-auth/scim";
 import Database from "better-sqlite3";
+import { LibsqlDialect } from "@libsql/kysely-libsql";
 
 export const auth = betterAuth({
-	database: new Database("./sqlite.db"),
+	database: process.env.NODE_ENV === "production" ? new LibsqlDialect({
+        url: process.env.TURSO_DATABASE_URL ?? "",
+        authToken: process.env.TURSO_AUTH_TOKEN ?? "",
+    }) : new Database("./sqlite.db"),
+
 	emailAndPassword: {
 		enabled: true,
 	},
