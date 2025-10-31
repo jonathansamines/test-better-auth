@@ -5,6 +5,11 @@ const supportedMethods = new Set(["POST", "PUT", "PATCH"]);
 export default async function proxy(request: NextRequest) {
     const forwardedHeaders = new Headers(request.headers);
 
+    // Make sure all SCIM endpoints use JSON
+    // Some providers may use an incorrect type which would be an error for better-call
+    // Additionally, better-call will use this hint to decide whether to parse the body or not
+    // This does not play well in all cases (e.g DELETE)
+
     if (request.nextUrl.pathname.startsWith('/api/auth/scim') && supportedMethods.has(request.method)) {
         forwardedHeaders.set('content-type', 'application/json');
     }

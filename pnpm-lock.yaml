@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@better-auth/scim':
-        specifier: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@db34ec9
-        version: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@db34ec9(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+        specifier: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@9e1e7fb
+        version: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@9e1e7fb(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       '@better-auth/sso':
         specifier: https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@5685
         version: https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@5685(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
@@ -152,8 +152,8 @@ packages:
       kysely: ^0.28.5
       nanostores: ^1.0.1
 
-  '@better-auth/scim@https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@db34ec9':
-    resolution: {tarball: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@db34ec9}
+  '@better-auth/scim@https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@9e1e7fb':
+    resolution: {tarball: https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@9e1e7fb}
     version: 1.4.0-beta.13
     peerDependencies:
       better-auth: 1.4.0-beta.15
@@ -2783,7 +2783,7 @@ snapshots:
       nanostores: 1.0.1
       zod: 4.1.12
 
-  '@better-auth/scim@https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@db34ec9(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
+  '@better-auth/scim@https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@9e1e7fb(better-auth@https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
     dependencies:
       better-auth: https://pkg.pr.new/better-auth/better-auth@5685(next@16.0.0(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       zod: 4.1.12
