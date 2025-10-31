@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const supportedMethods = new Set(["POST", "PUT", "PATCH"]);
+
 export default async function proxy(request: NextRequest) {
     const forwardedHeaders = new Headers(request.headers);
 
-    if (request.nextUrl.pathname.startsWith('/api/auth/scim')) {
+    if (request.nextUrl.pathname.startsWith('/api/auth/scim') && supportedMethods.has(request.method)) {
         forwardedHeaders.set('content-type', 'application/json');
     }
 
