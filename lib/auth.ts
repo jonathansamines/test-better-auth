@@ -126,7 +126,7 @@ export const auth = betterAuth({
 		// 			},
 		// 	],
 		// }),
-		scim({ adminRoles: ["member"] }),
+		scim(),
 		openAPI(),
 	],
 });
