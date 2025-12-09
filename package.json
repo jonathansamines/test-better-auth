@@ -17,12 +17,13 @@
     "pnpm": "10.19.0"
   },
   "dependencies": {
-    "@better-auth/scim": "^1.4.2",
-    "@better-auth/sso": "^1.4.2",
+    "@better-auth/scim": "https://pkg.pr.new/better-auth/better-auth/@better-auth/scim@6614",
+    "@better-auth/sso": "https://pkg.pr.new/better-auth/better-auth/@better-auth/sso@6614",
     "@libsql/client": "^0.15.15",
     "@libsql/kysely-libsql": "^0.4.1",
+    "@react-oauth/google": "^0.12.2",
     "@types/better-sqlite3": "^7.6.13",
-    "better-auth": "^1.4.2",
+    "better-auth": "https://pkg.pr.new/better-auth/better-auth@6614",
     "better-sqlite3": "^12.4.1",
     "next": "16.0.0",
     "react": "19.2.0",
