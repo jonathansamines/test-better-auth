@@ -27,7 +27,7 @@ export const auth = betterAuth({
 
 	plugins: [
 		sso(),
-		organization(),
+		// organization(),
 		// sso({
 		// 		defaultSSO: [
 		// 			{
