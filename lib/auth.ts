@@ -1,5 +1,5 @@
 import { betterAuth } from "better-auth";
-import { openAPI, organization } from "better-auth/plugins"
+import { openAPI, organization, admin } from "better-auth/plugins"
 import { sso } from "@better-auth/sso";
 import { scim } from "@better-auth/scim";
 import Database from "better-sqlite3";
@@ -27,7 +27,8 @@ export const auth = betterAuth({
 
 	plugins: [
 		sso(),
-		// organization(),
+		organization(),
+		admin(),
 		// sso({
 		// 		defaultSSO: [
 		// 			{
