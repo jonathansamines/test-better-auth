@@ -17,13 +17,13 @@
     "pnpm": "10.19.0"
   },
   "dependencies": {
-    "@better-auth/scim": "^1.4.9",
-    "@better-auth/sso": "^1.4.9",
+    "@better-auth/scim": "^1.4.10",
+    "@better-auth/sso": "^1.4.10",
     "@libsql/client": "^0.15.15",
     "@libsql/kysely-libsql": "^0.4.1",
     "@react-oauth/google": "^0.12.2",
     "@types/better-sqlite3": "^7.6.13",
-    "better-auth": "^1.4.9",
+    "better-auth": "^1.4.10",
     "better-sqlite3": "^12.4.1",
     "next": "16.0.10",
     "react": "19.2.0",
