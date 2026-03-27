@@ -1,4 +1,5 @@
 import { betterAuth } from "better-auth";
+import { dash } from "@better-auth/dash";
 import { openAPI, organization, admin } from "better-auth/plugins"
 import { sso } from "@better-auth/sso";
 import { scim } from "@better-auth/scim";
@@ -26,7 +27,8 @@ export const auth = betterAuth({
 	},
 
 	plugins: [
-		sso(),
+    dash(),
+    sso(),
 		organization(),
 		admin(),
 		// sso({
