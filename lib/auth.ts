@@ -1,5 +1,6 @@
 import { betterAuth } from "better-auth";
 import { openAPI, organization, admin } from "better-auth/plugins"
+import { dash, sentinel } from "@better-auth/infra";
 import { sso } from "@better-auth/sso";
 import { scim } from "@better-auth/scim";
 import Database from "better-sqlite3";
@@ -26,6 +27,12 @@ export const auth = betterAuth({
 	},
 
 	plugins: [
+		dash({
+			apiKey: process.env.BETTER_AUTH_API_KEY,
+		}),
+		sentinel({
+			apiKey: process.env.BETTER_AUTH_API_KEY,
+		}),
 		sso(),
 		organization(),
 		admin(),
