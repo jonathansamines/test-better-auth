@@ -81,8 +81,8 @@ export default function SignUpPage() {
 
   return (
     <AuthShell
-      title="Create your account"
-      subtitle="Sign up with email, Google, or provision via organization SSO."
+      title="Sign Up"
+      subtitle="Enter your information to create an account"
       footer={
         <>
           Already have an account?{" "}

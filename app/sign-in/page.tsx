@@ -79,13 +79,13 @@ function SignInForm() {
 
   return (
     <AuthShell
-      title="Welcome back"
-      subtitle="Sign in with email, Google, or your organization SSO."
+      title="Sign In"
+      subtitle="Enter your email below to login to your account"
       footer={
         <>
           Don&apos;t have an account?{" "}
           <Link href="/sign-up" className="font-medium text-primary underline-offset-4 hover:underline">
-            Create one
+            Sign up
           </Link>
         </>
       }

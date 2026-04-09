@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
-import { InfrastructureWrapper } from "@/components/infrastructure/wrapper";
-import { ThemeProvider } from "@/components/theme-provider";
+
+import { BackgroundRippleEffect } from "@/components/background-ripple-effect";
+import Header from "@/components/header";
+import Providers from "@/components/providers";
+import { createMetadata } from "@/lib/metadata";
+
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "Better Auth",
-  description: "Official-style demo: email, Google, and enterprise SSO with Better Auth.",
-};
+export const metadata: Metadata = createMetadata({
+  title: {
+    template: "%s | Better Auth",
+    default: "Better Auth",
+  },
+  description: "The most comprehensive authentication framework for TypeScript",
+  metadataBase: new URL("https://demo.better-auth.com"),
+});
 
 export default function RootLayout({
   children,
@@ -17,12 +25,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}
-      >
-        <ThemeProvider>
-          <InfrastructureWrapper>{children}</InfrastructureWrapper>
-        </ThemeProvider>
+      <head>
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+      </head>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
+        <Providers>
+          <div className="min-h-[calc(100vh-3.5rem)] mt-14 w-full relative">
+            <Header />
+
+            <div className="absolute inset-0 z-0">
+              <BackgroundRippleEffect />
+            </div>
+
+            <div className="relative z-10 mx-auto w-full max-w-4xl p-6">{children}</div>
+          </div>
+        </Providers>
       </body>
     </html>
   );

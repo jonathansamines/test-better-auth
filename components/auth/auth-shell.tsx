@@ -17,15 +17,15 @@ type AuthShellProps = {
   footer: ReactNode;
 };
 
-/** Auth body only — `InfrastructureWrapper` in the root layout provides the shell. */
+/** Auth body only — root layout provides the demo-style header, ripple background, and content width. */
 export function AuthShell({ title, subtitle, children, footer }: AuthShellProps) {
   return (
     <div className="w-full">
       <div className="flex w-full flex-col items-center justify-center px-4 md:py-10">
         <div className="w-full max-w-[420px] md:w-[400px]">
-          <Card className="rounded-none border-border shadow-none">
+          <Card className="w-full max-h-[90vh] overflow-y-auto rounded-none border-border shadow-none ring-0">
             <CardHeader className="space-y-2 border-0 pb-0 text-center">
-              <CardTitle className="font-heading text-lg font-semibold tracking-tight md:text-xl">
+              <CardTitle className="text-lg font-semibold tracking-tight md:text-xl">
                 {title}
               </CardTitle>
               <CardDescription className="text-pretty text-xs leading-relaxed md:text-sm">

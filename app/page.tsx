@@ -1,19 +1,25 @@
-import Link from "next/link";
-import type { Metadata } from "next";
-import { LogIn } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { headers } from "next/headers";
 
-export const metadata: Metadata = {
-  title: "Better Auth",
-  description: "The most comprehensive authentication library for typescript",
-};
+import EntryButton from "@/components/entry-button";
+import { auth } from "@/lib/auth";
 
-const features = [
-  { name: "Email & Password", link: "https://www.better-auth.com/docs/authentication/email-password" },
-  { name: "Organization | Teams", link: "https://www.better-auth.com/docs/plugins/organization" },
-  { name: "Passkeys", link: "https://www.better-auth.com/docs/plugins/passkey" },
-  { name: "Multi Factor", link: "https://www.better-auth.com/docs/plugins/2fa" },
+const features: { name: string; link: string }[] = [
+  {
+    name: "Email & Password",
+    link: "https://www.better-auth.com/docs/authentication/email-password",
+  },
+  {
+    name: "Organization | Teams",
+    link: "https://www.better-auth.com/docs/plugins/organization",
+  },
+  {
+    name: "Passkeys",
+    link: "https://www.better-auth.com/docs/plugins/passkey",
+  },
+  {
+    name: "Multi Factor",
+    link: "https://www.better-auth.com/docs/plugins/2fa",
+  },
   {
     name: "Password Reset",
     link: "https://www.better-auth.com/docs/authentication/email-password#request-password-reset",
@@ -30,16 +36,39 @@ const features = [
     name: "Rate Limiting",
     link: "https://www.better-auth.com/docs/reference/security#rate-limiting",
   },
-  { name: "Session Management", link: "https://www.better-auth.com/docs/concepts/session-management" },
-] as const;
+  {
+    name: "Session Management",
+    link: "https://www.better-auth.com/docs/concepts/session-management",
+  },
+  {
+    name: "Multiple Session",
+    link: "https://www.better-auth.com/docs/plugins/multi-session",
+  },
+  {
+    name: "Stripe Integration",
+    link: "https://www.better-auth.com/docs/plugins/stripe",
+  },
+  {
+    name: "Last Login Method",
+    link: "https://www.better-auth.com/docs/plugins/last-login-method",
+  },
+  {
+    name: "OAuth Provider",
+    link: "https://www.better-auth.com/docs/plugins/oauth-provider",
+  },
+];
 
-export default function HomePage() {
+export default async function Page() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
   return (
-    <div className="no-visible-scrollbar flex min-h-[80vh] items-center justify-center overflow-hidden px-6 md:px-0">
+    <div className="flex min-h-[80vh] items-center justify-center overflow-hidden no-visible-scrollbar">
       <main className="row-start-2 flex flex-col items-center justify-center gap-4">
         <div className="flex flex-col gap-1">
-          <h3 className="text-center text-4xl font-bold text-black dark:text-white">Better Auth.</h3>
-          <p className="break-words text-center text-sm md:text-base">
+          <h3 className="text-center text-3xl text-black sm:text-4xl dark:text-white">BETTER-AUTH.</h3>
+          <p className="wrap-break-word text-center text-sm md:text-base">
             Official demo to showcase{" "}
             <a href="https://better-auth.com" target="_blank" className="italic underline" rel="noreferrer">
               better-auth.
@@ -47,9 +76,9 @@ export default function HomePage() {
             features and capabilities. <br />
           </p>
         </div>
-        <div className="flex w-full flex-col gap-4 md:w-10/12">
+        <div className="flex w-full max-w-xl flex-col gap-4">
           <div className="flex flex-col flex-wrap gap-3 pt-2">
-            <div className="border-y border-dotted border-border bg-secondary/60 py-2 opacity-80">
+            <div className="border border-dashed border-border bg-secondary/70 p-2">
               <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
                 <span className="text-center">
                   All features on this demo are implemented with Better Auth without any custom backend code
@@ -70,23 +99,9 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col items-center gap-3">
-            <Link
-              href="/sign-in"
-              className={cn(
-                buttonVariants({ variant: "default", size: "lg" }),
-                "inline-flex gap-2 self-center",
-              )}
-            >
-              <LogIn className="size-[1.2em]" aria-hidden />
-              Sign in
-            </Link>
-            <Link
-              href="/sign-up"
-              className="text-xs text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-            >
-              Create account
-            </Link>
+
+          <div className="flex items-center justify-center">
+            <EntryButton session={session} />
           </div>
         </div>
       </main>

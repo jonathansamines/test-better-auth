@@ -284,7 +284,7 @@ export function DashboardOrganizationCard() {
                     </Button>
                     <Button
                       type="button"
-                      size="icon-sm"
+                      size="icon"
                       variant="outline"
                       className="size-8"
                       title="Copy invite link"
