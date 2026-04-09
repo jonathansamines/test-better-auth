@@ -33,7 +33,7 @@ export const auth = betterAuth({
 		sentinel({
 			apiKey: process.env.BETTER_AUTH_API_KEY,
 		}),
-		sso(),
+		sso({ domainVerification: { enabled: true } }),
 		organization(),
 		admin(),
 		// sso({
