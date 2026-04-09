@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "db:seed": "node --experimental-strip-types scripts/seed-users.ts"
+    "lint": "eslint"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +23,6 @@
     "@better-auth/sso": "^1.6.2",
     "@libsql/client": "^0.15.15",
     "@libsql/kysely-libsql": "^0.4.1",
-    "@react-oauth/google": "^0.12.2",
     "@types/better-sqlite3": "^7.6.13",
     "better-auth": "^1.6.2",
     "better-sqlite3": "^12.4.1",

@@ -26,9 +26,6 @@ importers:
       '@libsql/kysely-libsql':
         specifier: ^0.4.1
         version: 0.4.1(kysely@0.28.15)
-      '@react-oauth/google':
-        specifier: ^0.12.2
-        version: 0.12.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@types/better-sqlite3':
         specifier: ^7.6.13
         version: 7.6.13
@@ -921,12 +918,6 @@ packages:
   '@opentelemetry/semantic-conventions@1.40.0':
     resolution: {integrity: sha512-cifvXDhcqMwwTlTK04GBNeIe7yyo28Mfby85QXFe1Yk8nmi36Ab/5UQwptOx84SsoGNRg+EVSjwzfSZMy6pmlw==}
     engines: {node: '>=14'}
-
-  '@react-oauth/google@0.12.2':
-    resolution: {integrity: sha512-d1GVm2uD4E44EJft2RbKtp8Z1fp/gK8Lb6KHgs3pHlM0PxCXGLaq8LLYQYENnN4xPWO1gkL4apBtlPKzpLvZwg==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -4431,11 +4422,6 @@ snapshots:
   '@opentelemetry/api@1.9.1': {}
 
   '@opentelemetry/semantic-conventions@1.40.0': {}
-
-  '@react-oauth/google@0.12.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
-    dependencies:
-      react: 19.2.0
-      react-dom: 19.2.0(react@19.2.0)
 
   '@rtsao/scc@1.1.0': {}
 
