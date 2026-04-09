@@ -1,8 +1,7 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
-import { Building2 } from "lucide-react";
 
-import { buttonVariants } from "@/components/ui/button";
+import { AppLogo } from "@/components/site/app-logo";
+import { SiteBackground } from "@/components/site/site-background";
 import {
   Card,
   CardContent,
@@ -22,36 +21,26 @@ type AuthShellProps = {
 
 export function AuthShell({ title, subtitle, children, footer }: AuthShellProps) {
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-muted/40 px-4 py-12">
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,oklch(0.55_0.18_280_/_0.18),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,oklch(0.55_0.18_280_/_0.12),transparent)]"
-        aria-hidden
-      />
-      <div className="relative w-full max-w-[440px] space-y-6">
-        <div className="text-center">
-          <Link
-            href="/"
-            className={cn(
-              buttonVariants({ variant: "ghost" }),
-              "inline-flex h-auto gap-2 px-2 py-1 text-base font-semibold",
-            )}
-          >
-            <span className="flex size-9 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-              <Building2 className="size-5" aria-hidden />
-            </span>
-            Acme App
-          </Link>
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-muted/50 px-4 py-14 sm:px-6">
+      <SiteBackground />
+      <div className="relative w-full max-w-[420px] space-y-8">
+        <div className="flex justify-center">
+          <AppLogo name="Acme App" className="inline-flex" />
         </div>
 
-        <Card className="border-border/60 bg-card/85 shadow-lg shadow-black/5 backdrop-blur-md dark:bg-card/90 dark:shadow-black/20">
-          <CardHeader className="space-y-1 border-0 pb-0 text-center">
-            <CardTitle className="text-2xl font-semibold tracking-tight">{title}</CardTitle>
-            <CardDescription className="text-pretty">{subtitle}</CardDescription>
+        <Card className="border-border/50 bg-card/90 shadow-xl shadow-black/[0.04] ring-1 ring-foreground/[0.06] backdrop-blur-md dark:bg-card/80 dark:shadow-black/30 dark:ring-white/[0.08]">
+          <CardHeader className="space-y-2 border-0 pb-0 text-center">
+            <CardTitle className="font-heading text-xl font-semibold tracking-tight sm:text-2xl">
+              {title}
+            </CardTitle>
+            <CardDescription className="text-pretty text-[0.9375rem] leading-relaxed">
+              {subtitle}
+            </CardDescription>
           </CardHeader>
-          <CardContent className="pt-2">{children}</CardContent>
+          <CardContent className="pt-1">{children}</CardContent>
         </Card>
 
-        <p className="text-center text-sm text-muted-foreground">{footer}</p>
+        <p className="text-center text-sm leading-relaxed text-muted-foreground">{footer}</p>
       </div>
     </div>
   );
@@ -59,11 +48,11 @@ export function AuthShell({ title, subtitle, children, footer }: AuthShellProps)
 
 export function AuthDivider({ label, className }: { label: string; className?: string }) {
   return (
-    <div className={cn("relative my-6", className)}>
+    <div className={cn("relative my-7", className)}>
       <div className="absolute inset-0 flex items-center" aria-hidden>
-        <Separator className="w-full" />
+        <Separator className="w-full opacity-60" />
       </div>
-      <div className="relative flex justify-center text-xs font-medium uppercase tracking-wide">
+      <div className="relative flex justify-center text-[0.8125rem] font-medium">
         <span className="bg-card px-3 text-muted-foreground">{label}</span>
       </div>
     </div>

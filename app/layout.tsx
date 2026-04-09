@@ -1,24 +1,13 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeSwitch } from "@/components/theme-switch";
 import "./globals.css";
-
-/** Plus Jakarta Sans — SIL Open Font License 1.1 */
-const fontSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-/** JetBrains Mono — Apache 2.0 */
-const fontMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Acme App",
-  description: "Sign in or create an account",
+  description: "Sign in with email, Google, or SSO.",
 };
 
 export default function RootLayout({
@@ -27,11 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontMono.variable} antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+          <ThemeSwitch />
+        </ThemeProvider>
       </body>
     </html>
   );

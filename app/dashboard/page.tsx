@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Building2, LogOut, Mail, UserRound } from "lucide-react";
+import { BadgeCheck, LogOut, Mail, UserRound } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
+import { AppLogo } from "@/components/site/app-logo";
+import { SiteBackground } from "@/components/site/site-background";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -57,17 +59,14 @@ export default function DashboardPage() {
   if (isPending) {
     return (
       <div className="relative min-h-screen bg-background">
-        <div
-          className="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,oklch(0.55_0.18_280_/_0.12),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,oklch(0.55_0.18_280_/_0.08),transparent)]"
-          aria-hidden
-        />
-        <header className="relative z-10 border-b border-border/60 bg-background/80 backdrop-blur-sm">
-          <div className="mx-auto flex h-14 max-w-5xl items-center px-4 sm:px-6">
+        <SiteBackground />
+        <header className="relative z-10 border-b border-border/50 bg-background/75 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+          <div className="mx-auto flex h-14 max-w-5xl items-center px-4 sm:h-16 sm:px-6">
             <div className="h-8 w-28 animate-pulse rounded-md bg-muted" />
           </div>
         </header>
-        <main className="relative z-10 mx-auto max-w-md px-4 py-10 sm:px-6">
-          <Card className="border-border/60 bg-card/85 shadow-lg backdrop-blur-sm">
+        <main className="relative z-10 mx-auto max-w-lg px-4 py-12 sm:px-6 sm:py-16">
+          <Card className="border-border/50 bg-card/90 shadow-xl shadow-black/[0.04] ring-1 ring-foreground/[0.06] backdrop-blur-md dark:shadow-black/25 dark:ring-white/[0.08]">
             <CardHeader className="space-y-4">
               <div className="size-16 animate-pulse rounded-full bg-muted" />
               <div className="h-6 w-40 animate-pulse rounded-md bg-muted" />
@@ -108,66 +107,59 @@ export default function DashboardPage() {
 
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
-      <div
-        className="pointer-events-none fixed inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,oklch(0.55_0.18_280_/_0.12),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,oklch(0.55_0.18_280_/_0.08),transparent)]"
-        aria-hidden
-      />
+      <SiteBackground />
 
-      <header className="relative z-10 border-b border-border/60 bg-background/80 backdrop-blur-sm">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:px-6">
-          <Link
-            href="/"
-            className={cn(
-              buttonVariants({ variant: "ghost" }),
-              "gap-2 px-2 text-base font-semibold hover:bg-transparent",
-            )}
-          >
-            <span className="flex size-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
-              <Building2 className="size-4" aria-hidden />
-            </span>
-            Acme
-          </Link>
-          <span className="text-sm font-medium text-muted-foreground">Dashboard</span>
+      <header className="relative z-10 border-b border-border/50 bg-background/75 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:h-16 sm:px-6">
+          <AppLogo />
+          <span className="rounded-md border border-border/60 bg-muted/40 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+            Dashboard
+          </span>
         </div>
       </header>
 
-      <main className="relative z-10 mx-auto w-full max-w-md flex-1 px-4 py-10 sm:px-6">
-        <Card className="border-border/60 bg-card/85 shadow-lg shadow-black/5 backdrop-blur-md dark:shadow-black/20">
+      <main className="relative z-10 mx-auto w-full max-w-lg flex-1 px-4 py-12 sm:px-6 sm:py-16">
+        <Card className="border-border/50 bg-card/90 shadow-xl shadow-black/[0.04] ring-1 ring-foreground/[0.06] backdrop-blur-md dark:shadow-black/25 dark:ring-white/[0.08]">
           <CardHeader className="flex flex-col items-center space-y-4 text-center sm:items-start sm:text-left">
-            <Avatar className="size-20 text-lg">
+            <Avatar className="size-[4.5rem] text-lg ring-2 ring-background shadow-md">
               {user.image ? <AvatarImage src={user.image} alt="" /> : null}
-              <AvatarFallback className="bg-primary/10 text-lg font-semibold text-primary">
+              <AvatarFallback className="bg-primary/12 text-lg font-semibold text-primary">
                 {initials}
               </AvatarFallback>
             </Avatar>
-            <div className="space-y-1">
-              <CardTitle className="text-xl">{displayName}</CardTitle>
-              <CardDescription>Signed in to your Acme workspace.</CardDescription>
+            <div className="space-y-1.5">
+              <CardTitle className="font-heading text-xl font-semibold tracking-tight">{displayName}</CardTitle>
+              <CardDescription className="text-[0.9375rem] leading-relaxed">
+                Signed in to your Acme workspace.
+              </CardDescription>
             </div>
           </CardHeader>
           <CardContent className="space-y-6">
-            <dl className="space-y-4 text-sm">
-              <div className="flex gap-3">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted">
+            <dl className="space-y-3 text-sm">
+              <div className="flex gap-3 rounded-xl border border-border/50 bg-muted/25 p-3">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-background/80 ring-1 ring-border/50">
                   <UserRound className="size-4 text-muted-foreground" aria-hidden />
                 </div>
                 <div className="min-w-0 flex-1 space-y-0.5">
-                  <dt className="text-muted-foreground">Name</dt>
+                  <dt className="text-xs font-medium text-muted-foreground">Name</dt>
                   <dd className="font-medium text-foreground">{user.name?.trim() || "—"}</dd>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-muted">
+              <div className="flex gap-3 rounded-xl border border-border/50 bg-muted/25 p-3">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-background/80 ring-1 ring-border/50">
                   <Mail className="size-4 text-muted-foreground" aria-hidden />
                 </div>
                 <div className="min-w-0 flex-1 space-y-0.5">
-                  <dt className="text-muted-foreground">Email</dt>
+                  <dt className="text-xs font-medium text-muted-foreground">Email</dt>
                   <dd className="break-all font-medium text-foreground">{email || "—"}</dd>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <div className="min-w-0 flex-1 space-y-0.5 pl-12">
-                  <dt className="text-muted-foreground">Email status</dt>
+              <div className="flex gap-3 rounded-xl border border-border/50 bg-muted/25 p-3">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-background/80 ring-1 ring-border/50">
+                  <BadgeCheck className="size-4 text-muted-foreground" aria-hidden />
+                </div>
+                <div className="min-w-0 flex-1 space-y-0.5">
+                  <dt className="text-xs font-medium text-muted-foreground">Email status</dt>
                   <dd className="font-medium text-foreground">
                     {verified ? "Verified" : "Not verified"}
                   </dd>
@@ -175,12 +167,12 @@ export default function DashboardPage() {
               </div>
             </dl>
 
-            <Separator />
+            <Separator className="opacity-60" />
 
             <Button
               type="button"
               variant="outline"
-              className="w-full gap-2"
+              className="w-full gap-2 border-border/70 bg-background/40 backdrop-blur-sm"
               onClick={handleSignOut}
               disabled={signingOut}
             >
