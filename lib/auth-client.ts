@@ -14,3 +14,5 @@ export const authClient = createAuthClient({
     ssoClient(),
   ],
 });
+
+export const { organization, useListOrganizations, useActiveOrganization } = authClient;

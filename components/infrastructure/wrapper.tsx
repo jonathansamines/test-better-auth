@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 
 import { InfrastructureLogo } from "@/components/infrastructure/logo";
@@ -9,7 +10,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
  * Shell from `~/dev/infrastructure/examples/nextjs/components/wrapper.tsx`
  * (grid background, top bar, content column).
  */
-export function InfrastructureWrapper({ children }: { children: React.ReactNode }) {
+export function InfrastructureWrapper({ children }: { children: ReactNode }) {
   return (
     <div className="relative flex min-h-screen w-full justify-center bg-white bg-grid-small-black/[0.2] dark:bg-black dark:bg-grid-small-white/[0.2]">
       <div className="pointer-events-none absolute inset-0 hidden items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black md:flex" />
