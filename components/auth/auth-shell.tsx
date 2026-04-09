@@ -1,7 +1,5 @@
 import type { ReactNode } from "react";
 
-import { AppLogo } from "@/components/site/app-logo";
-import { SiteBackground } from "@/components/site/site-background";
 import {
   Card,
   CardContent,
@@ -19,28 +17,26 @@ type AuthShellProps = {
   footer: ReactNode;
 };
 
+/** Auth body only — `InfrastructureWrapper` in the root layout provides the shell. */
 export function AuthShell({ title, subtitle, children, footer }: AuthShellProps) {
   return (
-    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-muted/50 px-4 py-14 sm:px-6">
-      <SiteBackground />
-      <div className="relative w-full max-w-[420px] space-y-8">
-        <div className="flex justify-center">
-          <AppLogo name="Acme App" className="inline-flex" />
+    <div className="w-full">
+      <div className="flex w-full flex-col items-center justify-center px-4 md:py-10">
+        <div className="w-full max-w-[420px] md:w-[400px]">
+          <Card className="rounded-none border-border shadow-none">
+            <CardHeader className="space-y-2 border-0 pb-0 text-center">
+              <CardTitle className="font-heading text-lg font-semibold tracking-tight md:text-xl">
+                {title}
+              </CardTitle>
+              <CardDescription className="text-pretty text-xs leading-relaxed md:text-sm">
+                {subtitle}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pt-1">{children}</CardContent>
+          </Card>
+
+          <p className="mt-8 text-center text-sm leading-relaxed text-muted-foreground">{footer}</p>
         </div>
-
-        <Card className="border-border/50 bg-card/90 shadow-xl shadow-black/[0.04] ring-1 ring-foreground/[0.06] backdrop-blur-md dark:bg-card/80 dark:shadow-black/30 dark:ring-white/[0.08]">
-          <CardHeader className="space-y-2 border-0 pb-0 text-center">
-            <CardTitle className="font-heading text-xl font-semibold tracking-tight sm:text-2xl">
-              {title}
-            </CardTitle>
-            <CardDescription className="text-pretty text-[0.9375rem] leading-relaxed">
-              {subtitle}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="pt-1">{children}</CardContent>
-        </Card>
-
-        <p className="text-center text-sm leading-relaxed text-muted-foreground">{footer}</p>
       </div>
     </div>
   );

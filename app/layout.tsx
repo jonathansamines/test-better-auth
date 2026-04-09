@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { InfrastructureWrapper } from "@/components/infrastructure/wrapper";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeSwitch } from "@/components/theme-switch";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Acme App",
-  description: "Sign in with email, Google, or SSO.",
+  title: "Better Auth",
+  description: "Official-style demo: email, Google, and enterprise SSO with Better Auth.",
 };
 
 export default function RootLayout({
@@ -21,8 +21,7 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}
       >
         <ThemeProvider>
-          {children}
-          <ThemeSwitch />
+          <InfrastructureWrapper>{children}</InfrastructureWrapper>
         </ThemeProvider>
       </body>
     </html>

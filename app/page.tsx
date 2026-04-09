@@ -1,78 +1,95 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { AppLogo } from "@/components/site/app-logo";
-import { SiteBackground } from "@/components/site/site-background";
+import { LogIn } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Acme",
-  description: "Demo app with email, social, and enterprise SSO—Better Auth style UI.",
+  title: "Better Auth",
+  description: "The most comprehensive authentication library for typescript",
 };
+
+const features = [
+  { name: "Email & Password", link: "https://www.better-auth.com/docs/authentication/email-password" },
+  { name: "Organization | Teams", link: "https://www.better-auth.com/docs/plugins/organization" },
+  { name: "Passkeys", link: "https://www.better-auth.com/docs/plugins/passkey" },
+  { name: "Multi Factor", link: "https://www.better-auth.com/docs/plugins/2fa" },
+  {
+    name: "Password Reset",
+    link: "https://www.better-auth.com/docs/authentication/email-password#request-password-reset",
+  },
+  {
+    name: "Email Verification",
+    link: "https://www.better-auth.com/docs/authentication/email-password#email-verification",
+  },
+  {
+    name: "Roles & Permissions",
+    link: "https://www.better-auth.com/docs/plugins/organization#roles",
+  },
+  {
+    name: "Rate Limiting",
+    link: "https://www.better-auth.com/docs/reference/security#rate-limiting",
+  },
+  { name: "Session Management", link: "https://www.better-auth.com/docs/concepts/session-management" },
+] as const;
 
 export default function HomePage() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-background">
-      <SiteBackground />
-
-      <header className="relative z-10 border-b border-border/50 bg-background/75 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-4 px-4 sm:h-16 sm:px-6">
-          <AppLogo />
-          <nav className="flex items-center gap-1 sm:gap-2">
+    <div className="no-visible-scrollbar flex min-h-[80vh] items-center justify-center overflow-hidden px-6 md:px-0">
+      <main className="row-start-2 flex flex-col items-center justify-center gap-4">
+        <div className="flex flex-col gap-1">
+          <h3 className="text-center text-4xl font-bold text-black dark:text-white">Better Auth.</h3>
+          <p className="break-words text-center text-sm md:text-base">
+            Official demo to showcase{" "}
+            <a href="https://better-auth.com" target="_blank" className="italic underline" rel="noreferrer">
+              better-auth.
+            </a>{" "}
+            features and capabilities. <br />
+          </p>
+        </div>
+        <div className="flex w-full flex-col gap-4 md:w-10/12">
+          <div className="flex flex-col flex-wrap gap-3 pt-2">
+            <div className="border-y border-dotted border-border bg-secondary/60 py-2 opacity-80">
+              <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                <span className="text-center">
+                  All features on this demo are implemented with Better Auth without any custom backend code
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2">
+              {features.map((feature) => (
+                <a
+                  className="flex cursor-pointer items-center gap-1 border-b border-transparent pb-1 text-xs text-muted-foreground transition-all duration-150 ease-in-out hover:border-foreground hover:text-foreground"
+                  key={feature.name}
+                  href={feature.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {feature.name}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-3">
             <Link
               href="/sign-in"
               className={cn(
-                buttonVariants({ variant: "ghost", size: "sm" }),
-                "text-muted-foreground hover:text-foreground",
+                buttonVariants({ variant: "default", size: "lg" }),
+                "inline-flex gap-2 self-center",
               )}
             >
+              <LogIn className="size-[1.2em]" aria-hidden />
               Sign in
             </Link>
-            <Link href="/sign-up" className={cn(buttonVariants({ variant: "default", size: "sm" }))}>
+            <Link
+              href="/sign-up"
+              className="text-xs text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+            >
               Create account
             </Link>
-          </nav>
-        </div>
-      </header>
-
-      <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 py-20 sm:px-6 sm:py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/80 px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm ring-1 ring-foreground/[0.04] backdrop-blur-sm dark:bg-card/50">
-            <span className="size-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(14,35,196,0.55)]" />
-            Better Auth demo
-          </p>
-          <h1 className="mt-6 font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.1]">
-            Authentication that feels built-in
-          </h1>
-          <p className="mx-auto mt-5 max-w-lg text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Email, social login, and enterprise SSO in one flow—polished UI you can ship beside your product.
-          </p>
-          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Link href="/sign-up" className={cn(buttonVariants({ size: "lg" }), "h-10 px-6 sm:min-w-[10rem]")}>
-              Get started
-            </Link>
-            <Link
-              href="/sign-in"
-              className={cn(
-                buttonVariants({ variant: "outline", size: "lg" }),
-                "h-10 border-border/70 bg-background/50 px-6 backdrop-blur-sm sm:min-w-[10rem]",
-              )}
-            >
-              Sign in
-            </Link>
           </div>
-          <p className="mt-10 text-sm text-muted-foreground">
-            Organization SSO?{" "}
-            <Link href="/sign-in?sso=1" className="font-medium text-primary underline-offset-4 hover:underline">
-              Continue with SSO
-            </Link>
-          </p>
         </div>
       </main>
-
-      <footer className="relative z-10 border-t border-border/50 py-8 text-center text-sm text-muted-foreground">
-        <p>© {new Date().getFullYear()} Acme Inc.</p>
-      </footer>
     </div>
   );
 }
