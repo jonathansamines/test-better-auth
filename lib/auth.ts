@@ -142,7 +142,7 @@ export const auth = betterAuth({
 		// 			},
 		// 	],
 		// }),
-		scim(),
+		scim({ providerOwnership: { enabled: true } }),
 		openAPI(),
 	],
 });
